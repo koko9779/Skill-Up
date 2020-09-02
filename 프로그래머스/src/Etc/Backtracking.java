@@ -29,12 +29,14 @@ public class Backtracking {
 		n = sc.nextInt();
 		
 		for (int i = 1; i <= n; i++) {
-           // 첫번째 퀸의 시작점은 행을 기준. (i = 1) => (1, 1), (i = 2) => (1, 2), (i = 3) => (1, 3)
+           // 첫번째 퀸의 시작점은 행을 기준. (i = 1) => (1, 1)
+		   //							   (i = 2) => (1, 2)
+		   // 							   (i = 3) => (1, 3)
             col = new int[16];
-            col[1] = i;
+            col[1] = i;						//1열 i행
 
             // 1. DFS 수행 (다음 열인 2열 이동)
-            dfs(2);
+            dfs(2);							//2열 dfs -> 3열 dfs -> .. -> n열 dfs
         }
 
         // 정답 출력
@@ -67,7 +69,7 @@ public class Backtracking {
         for (int i = 1; i < c; i++) {
             // 상위 노드에서 같은 행에 퀸이 있는지 여부
             if (col[i] == col[c]) {
-                return false;
+                return false; 
             }
             // 대각선 검사, 상위 노드의 퀸과 현재 노드의 퀸의 가로 세로 거리가 같은지 검사
             if (Math.abs(col[i] - col[c]) == Math.abs(i - c)) {
