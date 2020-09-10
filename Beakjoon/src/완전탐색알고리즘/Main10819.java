@@ -1,4 +1,4 @@
-package 백준.완전탐색알고리즘;
+package 완전탐색알고리즘;
 
 import java.io.BufferedReader;
 import java.io.IOException;
