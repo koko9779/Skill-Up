@@ -1,5 +1,11 @@
 package Level3.단어변환;
-
+/*
+ * 단어변환
+ * 
+ * begin을 words[]를 이용해 target으로 바꾸시오.
+ * 알파벳은 하나씩 바꿀 수 있다.
+ * 
+ */
 public class Solution {
 	static int MIN;
     public int solution(String begin, String target, String[] words) {
