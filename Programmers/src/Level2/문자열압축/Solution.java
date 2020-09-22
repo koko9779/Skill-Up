@@ -7,6 +7,8 @@ public class Solution {
     public int solution(String s) {
         int MIN_VALUE = Integer.MAX_VALUE;
         
+        if(s.length()==1) return 1;
+        
         //문자를 i개 단위로 잘라서 압축하면
         for (int i = 1; i < s.length()/2+1; i++) {
 			String compare = shorter(s,i);
@@ -24,7 +26,7 @@ public class Solution {
 		//split_num 개수씩 쪼개서 s_split배열에 넣기
 		int start_index = 0;
 		int end_index = start_index + split_num;
-		while(start_index <= s.length()) {
+		while(start_index <= s.length()-1) {
 			
 			if(end_index>s.length()) end_index = s.length();
 			
@@ -33,36 +35,39 @@ public class Solution {
 			start_index += split_num;
 			end_index = start_index + split_num;
 		}
-		for (int i = 0; i < s_split.size(); i++) {
-			System.out.print(s_split.poll()+" ");
+		
+		System.out.println(s_split);
+		
+		String word = s_split.poll();
+		String compare;
+		int count = 1;
+		while(!s_split.isEmpty()) {
+			compare = s_split.poll();
+			if(compare.equals(word)) {
+				count++;
+				
+			}else {
+				if(count==1) {
+					answer += word; 
+					word = compare;
+				}else {
+					answer += count+word;
+					word = compare;
+					count = 1;
+				}
+			}
 		}
-		System.out.println();
-//		String word = s_split.poll();
-//		String compare;
-//		int count = 1;
-//		while(!s_split.isEmpty()) {
-//			compare = s_split.poll();
-//			if(compare.equals(word)) {
-//				count++;
-//				
-//			}else {
-//				if(count==1) {
-//					answer += word;
-//				}else {
-//					answer += count+word;
-//					word = compare;
-//					count = 1;
-//				}
-//			}
-//		}
-//		if(count!=1) {
-//			answer += count+word;
-//		}
-//		System.out.println(answer);
+		if(count!=1) {
+			answer += count+word;
+		}else {
+			answer += word;
+		}
+		System.out.println(answer+", 길이: "+answer.length());
+		
 		return answer;
 	}
 	public static void main(String[] args) {
 		int answer = new Solution().solution("aabbaccc"); //2a2ba2c
-		System.out.println(answer);
+		System.out.println("결과값: "+answer);
 	}
 }
