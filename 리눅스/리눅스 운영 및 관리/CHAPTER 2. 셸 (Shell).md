@@ -17,7 +17,7 @@
 
     * **본셸** (/bin/sh) : 유닉스에서 기본 셸로 사용
     * **콘셸** (/bin/ksh) 
-    * **배쉬셸** (/bin/bash) : Linux 표준 셸로 채택. 다양한 OS에서 가능. POSIX 호환 가능
+    * **배쉬셸** (/bin/bash) : Linux **표준 셸**로 채택. 다양한 OS에서 가능. POSIX 호환 가능
     * **지셸** (/bin/zsh) : 강력한 history 기능
 
   *  **C셸** (사용자 프롬프트 : **%**)  = 본셸 + history + alias
@@ -69,7 +69,7 @@
 
     * **~/.bash_profile** : 로그인시 로딩. **개인 사용자**의 셸 환경 제어 설정
     * ~/.bash_history 
-    * ~/.bashrc : 별칭과 bash 수행 시 실행되는 함수 지역적으로 제어
+    * ~/.bash**rc** : 별칭과 bash 수행 시 실행되는 함수 지역적으로 **제어**
     * ~/.bash_logout : 로그아웃 직전 실행
 
   * History 기능
