@@ -42,7 +42,7 @@
 
 * **YUM** (Yellowdog Updater Modified)
 
-  * 네트워크를 통해 기존 RPM 업데이트, 새로운 패키지 설치 및 제거 수행
+  * <u>네트워크를 통해</u> 기존 RPM 업데이트, 새로운 패키지 설치 및 제거 수행
   * RPM 의존성 문제를 해결한 유틸리티
   * **인터넷 기반**
   * 사용법 : ex) yum install 패키지명, yum remove 패키지명, yum info 패키지명
