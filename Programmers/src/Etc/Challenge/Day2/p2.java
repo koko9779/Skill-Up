@@ -1,7 +1,5 @@
 package Etc.Challenge.Day2;
 
-import java.util.Arrays;
-
 public class p2 {
 	   static int result[];
 	   public static int[] solution(int[][] arr) {
@@ -36,10 +34,5 @@ public class p2 {
 	        }
 	        return true;
 	    }
-	   
-	   public static void main(String[] args) {
-	      int[][] arr = {{1,1,0,0},{1,0,0,0},{1,0,0,1},{1,1,1,1}};
-	      System.out.println(Arrays.toString(solution(arr)));
-	   }
 	
 }
