@@ -16,42 +16,62 @@ import java.io.InputStreamReader;
  * 예)
  * N=27
  * N=9인 사각형으로 둘러싸인 가운데가 N=9만큼 빈 사각형
- * -> 재귀
+ * -> 재귀, 분할정복
  */
 public class Main2447 {
-	public static char star_arr[][];
-	public char[][] starSorting(int n) {
-		char arr[][] = new char[n][n];
-		//N=3일 때
-		if(n==3) {
-			boolean side;
-			for (int i = 0; i < n; i++) {
-				if(i==0 || i==n-1) side = true;
-				else side = false;
-				for (int j = 0; j < n; j++) {
-					if(side) {
-						arr[i][j] = '*';
-					}else {
-						if(j==0 || j==n-1) arr[i][j]='*';
-						else arr[i][j]=' ';
-					}
+	static char star_arr[][];
+	void starSorting(int x, int y, int N, boolean blank) {
+		//공백 칸일 경우
+		if(blank) {
+			for (int i = x; i < x+N; i++) {
+				for (int j = y; j < y+N; j++) {
+					star_arr[i][j]=' ';
 				}
 			}
-		//그 외 재귀함수
-		}else {
+			return;
+		}
+		//더이상 쪼갤 수 없는 블록일 때
+		if(N==1) {
+			star_arr[x][y]='*';
+			return;
+		}
+		
+		/*
+			 N=27 일 경우 한 블록의 사이즈는 9이고,
+			 N=9   일 경우 한 블록의 사이즈는 3이듯
+			 해당 블록의 한 칸을 담을 변수를 의미 size
+			 
+			 count는 별 출력 누적을 의미
+		 */
+		
+		//패턴을 분석해 보면 항상 (1,1)일때 = 5번째일때 공백이였다 
+		int size = N/3;
+		int count = 0;
+		for (int i = x; i < x+N; i+=size) {
+			for (int j = y; j < y+N; j+=size) {
+				count++;
+				if(count==5) {	//공백 칸일 경우
+					starSorting(i, j, size, true);
+				}else {
+					starSorting(i, j, size, false);
+				}
+			}
 			
 		}
-		return arr;
 	}
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		star_arr = new Main2447().starSorting(n);
-		for (int i = 0; i < star_arr.length; i++) {
-			for (int j = 0; j < star_arr.length; j++) {
-				System.out.print(star_arr[i][j]);
+		star_arr = new char[n][n];
+		new Main2447().starSorting(0, 0, n, false);
+		
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				sb.append(star_arr[i][j]);
 			}
-			System.out.println();
+			sb.append('\n');
 		}
+		System.out.print(sb);
 	}
 }
