@@ -3,10 +3,6 @@ package 쿼드트리;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-// 백준/별찍기/Main2447 관련 문제
-import java.util.StringTokenizer;
 
 /*
  * 1. 현재 구간에 있는 숫자들이 0으로만 이루어지거나 1로만 이루어져있다면 해당 숫자를 출력합니다.
@@ -16,49 +12,55 @@ import java.util.StringTokenizer;
 public class Main1992 {
 	
 	static String answer = "";
-	static int num = 0;
+	static int[][] arr;
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
+		int n = Integer.valueOf(br.readLine());
 		
 		// N*N 배열 만들기
-		int [][] arr = new int[n][n];
+		arr = new int[n][n];
 		for (int i = 0; i < n; i++) {
-			StringTokenizer st = new StringTokenizer(br.readLine());
+			String str = br.readLine();
 			for (int j = 0; j < n; j++) {
-				arr[i][j] = Integer.parseInt(st.nextToken());
+				arr[i][j] = Integer.valueOf(str.substring(j,j+1));
 			}
 		}
 		
-		quadTree(arr,0,0,arr.length);
+		quadTree(n,0,0);
+		System.out.println(answer);
 	}
 	
-	public static void quadTree(int[][] arr, int row, int col, int N) {
-		if(isAble(arr, row, col, N)) {
-			answer += num + ")";
-		}else {
-			
-			int size = N/2;
-			answer +="(";
-			
-			//해당 영역을 다시 4분할하여 탐색
-			quadTree(arr, row, col, size);
-            quadTree(arr, row, col + size, size);
-            quadTree(arr, row + size, col, size);
-            quadTree(arr, row + size, col + size, size);
+	public static void quadTree(int size, int row, int col) {
+		if(size == 1) {
+			answer += arr[col][row];
+			return;
 		}
+		
+		boolean same = true;
+		for (int i = col; i < col+size; i++) {
+			if(!same) break;
+			for (int j = row; j < row+size; j++) {
+				if(arr[col][row] != arr[i][j]) {
+					same = false;
+					break;
+				}
+			}
+		}
+		
+		if(same) {
+			answer += arr[col][row];
+			return;
+		}
+		
+		int ns = size/2;
+		
+		answer +="(";
+		quadTree(ns, row, col);
+		quadTree(ns, row+ns, col);
+		quadTree(ns, row, col+ns);
+		quadTree(ns, row+ns, col+ns);
+		answer +=")";
 	}
-	
-	//해당 영역이 전부 1이거나 0인 경우 배열의 원소값 +1
-	public static boolean isAble(int[][] arr, int row, int col, int size) {
-		int t = arr[row][col];
-		num = arr[0][0];
-        for(int i=row; i < row+size; i++) {
-            for(int j=col; j < col+size; j++) {
-                if(t != arr[i][j]) return false;
-            }
-        }
-        return true;
-	}
+
 }
