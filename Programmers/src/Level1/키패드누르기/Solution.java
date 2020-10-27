@@ -31,20 +31,51 @@ public class Solution {
 				right = numbers[i];
 			}
 			if(num == 2 || num == 5 || num == 8 || num == 0) {
-				int diff = 0;
-				int left_d = 0;
-				int right_d = 0;
+				int[] leftFinger = {(left/3), (left%3)};
+				int[] rightFinger = {(right/3), (right%3)};
+				int[] checkFinger = {(num/3), (num%3)};
+				/*
+				 * 열
+				 * 1, 2, 0
+				 * 
+				 * left/right Finger = {몇번째 행, 몇번째 열};
+				 */
 				
-				diff = Math.abs(num - left);
-				while((diff)%3==0) {
-					
+				//오른손이 오른쪽에 있을 때
+				if(rightFinger[1]==0) {
+					//계산을 쉽게 하기 위해 좌측열과 1차이가 나게하기 위해서 3으로 치환
+					rightFinger[0] = rightFinger[0] - 1;
+					rightFinger[1] = 3;		
 				}
-				diff = Math.abs(num - right);
+		
+				int ll = Math.abs(leftFinger[1]-checkFinger[1]);	//왼손이 오른쪽으로 이동하는 횟수
+				int rr = Math.abs(rightFinger[1]-checkFinger[1]);	//오른손이 왼쪽으로 이동하는 횟수
 				
+				int leftChk = Math.abs(leftFinger[0]-checkFinger[0]) + ll;	//왼손이 움직이는 총 횟수
+				int rightChk = Math.abs(rightFinger[0]-checkFinger[0]) + rr;//오른손이 움직이는 총 횟수
+				
+				if(leftChk > rightChk) {
+					sb.append("R");
+					right = num;
+				}
+				else if(leftChk < rightChk) {
+					sb.append("L");
+					left = num;
+				}
+				//같은 경우
+				else {
+					if(hand.equals("left")) {
+						sb.append("L");
+						left = num;
+					}else if(hand.equals("right")) {
+						sb.append("R");
+						right = num;
+					}
+				}
 			}
-			
+			System.out.println(left + " "+ right);
 		}
-		return "";
+		return sb.toString();
 	}
 	public static void main(String[] args) {
 		int[] numbers = {1,3,4,5,8,2,1,4,5,9,5};
