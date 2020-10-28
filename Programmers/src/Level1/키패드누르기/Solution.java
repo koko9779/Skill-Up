@@ -26,11 +26,11 @@ public class Solution {
 				sb.append("L");
 				left = numbers[i];
 			}
-			if(num == 3 || num == 6 || num == 9) {
+			else if(num == 3 || num == 6 || num == 9) {
 				sb.append("R");
 				right = numbers[i];
 			}
-			if(num == 2 || num == 5 || num == 8 || num == 0) {
+			else {
 				int[] leftFinger = {(left/3), (left%3)};
 				int[] rightFinger = {(right/3), (right%3)};
 				int[] checkFinger = {(num/3), (num%3)};
@@ -78,7 +78,8 @@ public class Solution {
 		return sb.toString();
 	}
 	public static void main(String[] args) {
-		int[] numbers = {1,3,4,5,8,2,1,4,5,9,5};
+		//int[] numbers = {1,3,4,5,8,2,1,4,5,9,5};
+		int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
 		String hand = "right";
 		String result = new Solution().solution(numbers, hand);
 		System.out.println(result);
