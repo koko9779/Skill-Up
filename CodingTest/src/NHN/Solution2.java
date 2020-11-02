@@ -31,7 +31,9 @@ public class Solution2 {
 			//left와 right사이 공간이 있을 때
 			if(left+1!=right) {
 				
-				if(Math.min(left, right) > 
+//				if(Math.min(left, right){
+//					
+//				}
 				
 				//프레임에 맞게 시멘트 붓기
 				while(!frame.isEmpty()) {
