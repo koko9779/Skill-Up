@@ -1,4 +1,4 @@
-## pushpin 기술면접 정리
+## :pushpin: 기술면접 정리
 
 Trello 정리본(https://trello.com/b/ruN1oChY)
 
