@@ -1,4 +1,4 @@
-## 기술면접 정리
+## :pushpin: 기술면접 정리
 
 Trello 정리본(https://trello.com/b/ruN1oChY)
 
@@ -8,14 +8,14 @@ Trello 정리본(https://trello.com/b/ruN1oChY)
 * Ajax 동기/비동기 개념
 * 오버로딩과 오버라이딩의 차이점 ...
 
-## 리눅스
+## :pushpin: 리눅스
 
 ### 리눅스마스터2급 2차 이론 정리
 
-* 리눅스 운영 및 관리
-* 리눅스 활용 
+* [리눅스 운영 및 관리](https://github.com/koko9779/Skill-Up/tree/master/%EB%A6%AC%EB%88%85%EC%8A%A4/%EB%A6%AC%EB%88%85%EC%8A%A4%20%EC%9A%B4%EC%98%81%20%EB%B0%8F%20%EA%B4%80%EB%A6%AC)
+* [리눅스 활용](https://github.com/koko9779/Skill-Up/tree/master/%EB%A6%AC%EB%88%85%EC%8A%A4/%EB%A6%AC%EB%88%85%EC%8A%A4%20%ED%99%9C%EC%9A%A9) 
 
-## [프로그래머스] 알고리즘
+## :pushpin: [프로그래머스] 알고리즘
 
 ### level 1
 
@@ -39,3 +39,9 @@ Trello 정리본(https://trello.com/b/ruN1oChY)
 * 다리를 지나는 트럭
 * 더 맵게 
 * 조이스틱 ...
+
+### level 3
+
+* 타일링
+* 멀쩡한 사각형
+* 네트워크 ...
