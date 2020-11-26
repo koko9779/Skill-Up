@@ -1,4 +1,4 @@
-package Etc;
+package Etc.Algorithm.Sort;
 
 public class HeapSort {
 	public void heapSort(int[] array) {

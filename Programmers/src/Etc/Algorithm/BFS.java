@@ -1,4 +1,4 @@
-package Etc;
+package Etc.Algorithm;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

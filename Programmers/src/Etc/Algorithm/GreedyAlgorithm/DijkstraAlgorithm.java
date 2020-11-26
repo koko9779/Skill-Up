@@ -1,4 +1,4 @@
-package Etc.GreedyAlgorithm;
+package Etc.Algorithm.GreedyAlgorithm;
 
 /**
  * 다익스트라 알고리즘

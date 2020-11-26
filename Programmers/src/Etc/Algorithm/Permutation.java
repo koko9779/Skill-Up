@@ -1,4 +1,4 @@
-package Etc;
+package Etc.Algorithm;
 
 import java.util.ArrayList;
 import java.util.List;

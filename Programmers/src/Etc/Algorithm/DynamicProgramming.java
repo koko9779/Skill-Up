@@ -1,4 +1,4 @@
-package Etc;
+package Etc.Algorithm;
 /*문제
  *격자상의 경로
  *

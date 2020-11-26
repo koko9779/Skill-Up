@@ -1,4 +1,4 @@
-package Etc;
+package Etc.Algorithm.Sort;
 
 import java.util.Scanner;
 

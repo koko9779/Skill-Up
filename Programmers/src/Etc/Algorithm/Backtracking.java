@@ -1,4 +1,4 @@
-package Etc;
+package Etc.Algorithm;
 
 import java.util.Scanner;
 

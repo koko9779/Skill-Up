@@ -1,4 +1,4 @@
-package Etc.GreedyAlgorithm;
+package Etc.Algorithm.GreedyAlgorithm;
 
 import java.util.*;
 
