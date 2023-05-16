@@ -1,4 +1,4 @@
-package Recursion;
+package 개념정리.Recursion;
 
 /**
  * 0과 1부터 시작해서 앞에 있는 두 수를 더한 값을 다음 값으로 추가

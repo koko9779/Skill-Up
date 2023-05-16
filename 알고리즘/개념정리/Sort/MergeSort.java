@@ -1,4 +1,4 @@
-package Sort;
+package 개념정리.Sort;
 
 /**
  * 합병 정렬

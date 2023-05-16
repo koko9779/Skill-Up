@@ -1,4 +1,4 @@
-package Recursion;
+package 개념정리.Recursion;
 
 /**
  *  최대공약수(Greatest Common Divisor, GCD)

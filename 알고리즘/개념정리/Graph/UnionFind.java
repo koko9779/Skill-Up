@@ -1,4 +1,4 @@
-package Graph;
+package 개념정리.Graph;
 
 /**
  * 합집합 찾기 (크루스칼 알고리즘의 베이스)

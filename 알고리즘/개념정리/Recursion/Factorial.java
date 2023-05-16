@@ -1,4 +1,4 @@
-package Recursion;
+package 개념정리.Recursion;
 
 import java.util.Scanner;
 

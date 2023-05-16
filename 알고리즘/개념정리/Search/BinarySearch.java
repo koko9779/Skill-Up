@@ -1,4 +1,4 @@
-package Search;
+package 개념정리.Search;
 /**
  * 이분 탐색
  * : N개의 수가 크기 순서대로 배열되어있을 때, K가 몇 번째 위치에 있는지 찾는 방법

@@ -1,4 +1,4 @@
-package Graph;
+package 개념정리.Graph;
 
 /**
  * DAG (Directed Acyclic Graph)

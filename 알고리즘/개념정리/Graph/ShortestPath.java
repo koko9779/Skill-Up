@@ -1,4 +1,4 @@
-package Graph;
+package 개념정리.Graph;
 
 /**
  * 최단경로 알고리즘 (Shortest Path Algorithm)
