@@ -1,0 +1,5 @@
+/**
+ * HashMap
+ */
+public class Map {
+}

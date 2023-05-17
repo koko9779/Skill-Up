@@ -1,0 +1,5 @@
+/**
+ * HashSet
+ */
+public class Set {
+}
