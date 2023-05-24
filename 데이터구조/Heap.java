@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Random;
+
 /**
  * 힙 (Heap)
  * :완전 이진 트리의 일종으로 우선순위 큐를 위하여 만들어진 자료구조
@@ -22,25 +25,50 @@
  *  c.부모의 인덱스 = (자식의 인덱스) / 2
  */
 public class Heap {
+    static final int N = 11;
+    public static void main(String[] args) {
+        Random random = new Random();
+        int[] arr = new int[N];
 
-    //힙을 만드는 함수
-    private static void heapify(int[] arr, int parentIdx, int lastIdx){
-        int largestIdx = parentIdx;
-        
+        // arr[1], arr[2], arr[3], arr[4] ..
+        for (int i = 1; i < N; i++) {
+            arr[i] = random.nextInt(12);
+        }
 
-
+        System.out.println("정렬 전 : " + Arrays.toString(arr));
+        heapSort(arr);
+        System.out.println("정렬 후 : " + Arrays.toString(arr));
     }
 
-    private static int getParent(int[] arr, int child){
-        return arr[child / 2];
+    private static void heapSort(int[] arr){
+        for (int i = N -1; i >=  ; i--) {
+            heapify(arr, i);
+        }
     }
 
-    private static int getLeftChild(int[] arr, int parent){
-        return arr[parent * 2];
+    private static void heapify(int[] arr, int childIdx){
+        int parentIdx = getParentIdx(arr, childIdx);
+        while(parentIdx != 0){
+            if(arr[childIdx] > arr[parentIdx]){
+                swap(arr, parentIdx, childIdx);
+            }else{
+                break;
+            }
+
+            childIdx = parentIdx;
+            parentIdx = getParentIdx(arr, childIdx);
+        }
+    }
+    private static int getParentIdx(int[] arr, int child){
+        return child / 2;
     }
 
-    private static int getRightChild(int[] arr, int parent){
-        return arr[parent * 2 + 1];
+    private static int getLeftChildIdx(int[] arr, int parent){
+        return parent * 2;
+    }
+
+    private static int getRightChildIdx(int[] arr, int parent){
+        return parent * 2 + 1;
     }
 
     private static void swap(int[] arr, int i, int j){
