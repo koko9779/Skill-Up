@@ -14,7 +14,7 @@ path: /h2-console
 
 jpa:
 hibernate:
-ddl-auto: create-drop
+ddl-auto: none;
 show-sql: true
 generate-ddl: true
 defer-datasource-initialization: true
