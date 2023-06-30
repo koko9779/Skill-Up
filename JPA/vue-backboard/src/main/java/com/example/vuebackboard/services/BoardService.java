@@ -2,9 +2,13 @@ package com.example.vuebackboard.services;
 
 import com.example.vuebackboard.entity.BoardEntity;
 import com.example.vuebackboard.entity.BoardRepository;
+import com.example.vuebackboard.model.Header;
+import com.example.vuebackboard.model.Pagination;
 import com.example.vuebackboard.web.dtos.BoardDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -22,23 +26,28 @@ public class BoardService {
     /**
      * 게시글 목록 가져오기
      */
-    public List<BoardDto> getBoardList() {
-        List<BoardEntity> boardEntities = boardRepository.findAll();
+    public List<BoardDto> getBoardList(Pageable pageable) {
         List<BoardDto> dtos = new ArrayList<>();
 
-        for (BoardEntity entity : boardEntities) {
-            BoardDto dto = BoardDto.builder()
+        List<BoardEntity> boardEntities = boardRepository.findAll();
+        boardEntities.forEach(entity -> dtos.add(BoardDto.builder()
                     .idx(entity.getIdx())
                     .author(entity.getAuthor())
                     .title(entity.getTitle())
                     .contents(entity.getContents())
                     .createdAt(entity.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")))
-                    .build();
+                    .build()));
 
-            dtos.add(dto);
-        }
+        /*
+        Pagination pagination = new Pagination(
+                (int) boardEntities.getTotalElements()
+                , pageable.getPageNumber() + 1
+                , pageable.getPageSize()
+                , 10
+        ); */
 
         return dtos;
+        //return Header.OK(dtos, pagination);
     }
 
     /**
