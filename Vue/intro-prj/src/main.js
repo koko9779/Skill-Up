@@ -20,7 +20,7 @@ new Vue({
 }).$mount('#app');
 
 Vue.prototype.$axios = axios;                 //전역변수로 설정 컴포넌트에서 this.$axios 호출할 수 있음
-Vue.prototype.$serverUrl = '//localhost:8080' //api server
+Vue.prototype.$serverUrl = '//localhost:8081' //api server
 
 /*
 const axios = createAxios({

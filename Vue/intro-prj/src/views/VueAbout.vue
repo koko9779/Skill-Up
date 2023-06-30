@@ -53,11 +53,17 @@
         </select>
         <span>선택함: {{ selected }}</span>
     </div>
+    <ProvideInject/>
   </div>
 </template>
 <script>
+import ProvideInject from './ProvideInject.vue'
+
 export default {
     name:'VueAbout',
+    components: {
+        ProvideInject
+    },
     data: () => ({
         msg: 'Vue.js 시작하기',
         seen: false,

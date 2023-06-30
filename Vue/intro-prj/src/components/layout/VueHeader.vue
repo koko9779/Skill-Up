@@ -3,10 +3,14 @@
         <h1><a href="/" class="logo"><img alt="Vue logo" src="https://v2.ko.vuejs.org/images/logo.png" width="50"></a></h1>
         <div class="menuWrap">
             <ul class="menu">
-                <li><router-link to="/about">About</router-link></li>
+                <li>
+                  <router-link to="/about">
+                    <!--슬롯을 이용한 예시-->
+                    <slot name="forFirst" :fromHeader="title1" to="/about"/>
+                  </router-link></li>
                 <li><router-link to="/board/list">boardList</router-link></li>
                 <!-- <li><router-link to="/toDoList">ToDoList</router-link></li> -->
-                <li><router-link to="/news">NEWS</router-link></li>
+                <li><router-link to="/news">news</router-link></li>
             </ul>
         </div>
     </header>
@@ -14,7 +18,11 @@
 
 <script>
   export default {
-
+    data() {
+      return {
+        title1 : 'about'
+      }
+    }
   }
 </script>
 

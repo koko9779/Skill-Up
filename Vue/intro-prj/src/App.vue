@@ -2,7 +2,17 @@
 <!--<template>부분에서는 HTML로 내가 화면상에 표시할 요소들을 작성한다-->
 <template>
   <div id="app">
-    <Header></Header>
+    <Header>
+      <template v-slot:forFirst="props">
+        <p>첫번째 {{ props.fromHeader }}</p>
+      </template>
+      <template #forSecond>
+        <p>두번째</p>
+      </template>
+      <template #fordefault>
+        <p>기본</p>
+      </template>
+    </Header>
     <div class="contents">
       <!-- <Login></Login> -->
       <router-view></router-view>

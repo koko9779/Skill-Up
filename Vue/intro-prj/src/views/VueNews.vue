@@ -1,7 +1,10 @@
 <template>
+  <div>
+    <h1>AXIOS를 사용해서 외부 API 데이터 끌어와보기</h1>
     <div class="stocks">
         <div class="stock-card" v-for="user in this.$store.state.news" v-bind:key="user.title">{{  user.title }}</div>
     </div>
+  </div>
 </template>
 <script>
 export default {
@@ -23,7 +26,6 @@ export default {
   cursor: pointer;
   border: 1px solid #39495c;
   margin-bottom: 18px;
-  
 }
 .stock-card:hover{
   transform: scale(1.01);
