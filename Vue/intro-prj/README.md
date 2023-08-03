@@ -4,7 +4,7 @@
 
 Vue 버전 : 2.7.14   
 
-![Vue 버전](image.png)
+![Vue 버전](src/assets/image.png)
 
 Tool : VS CODE
 
@@ -79,9 +79,9 @@ axios.get / post / put / delete 을 사용해서 서버의 데이터를 불러�
 설치 이후 /node_modules에 axios가 추가된 것을 확인할 수 있다
 
 ### 간단한 게시판 만들어보기
-![BoardList](image-1.png)
-![BoardWrite](image-2.png)
-![BoardDetail](image-3.png)
+![BoardList](src/assets/image-1.png)
+![BoardWrite](src/assets/image-2.png)
+![BoardDetail](src/assets/image-3.png)
 
 #### 참조 
 * [게시판 API 데이터 만들어서 테스트 해보기](https://github.com/koko9779/Skill-Up/tree/master/JPA/vue-backboard)
